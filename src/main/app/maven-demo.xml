@@ -30,7 +30,9 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
 payload]]></dw:set-payload>
         </dw:transform-message>
         <logger level="INFO" doc:name="Logger"/>
-        <set-variable variableName="myvar" value="#['Changes to the code']" doc:name="Variable"/>
+        <set-variable variableName="myvar" value="#[payload]" doc:name="Variable"/>
         <set-payload value="#[flowVars.myvar]" doc:name="Set Payload"/>
+        <set-property propertyName="prop" value="#['This is property']" doc:name="Property"/>
+        <set-payload value="#[message.outboundProperties.prop]" doc:name="Set Payload"/>
     </flow>
 </mule>
