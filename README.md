@@ -12,5 +12,7 @@ This is my Maven project from MuleSoft's advanced development class
 
 This project is extended with variables and properties
 
+Here are more changes from GitHub
+
 
 
