@@ -35,4 +35,9 @@ payload]]></dw:set-payload>
         <set-property propertyName="prop" value="#['This is property']" doc:name="Property"/>
         <set-payload value="#[message.outboundProperties.prop]" doc:name="Set Payload"/>
     </flow>
+    <flow name="newFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/changes" allowedMethods="GET" doc:name="HTTP"/>
+        <set-payload value="There is new flow added to the existing project" doc:name="Set Payload"/>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
 </mule>
